@@ -123,10 +123,7 @@ body {
   opacity: 1;
   /*background-color: var(--body-color);*/
   background-attachment: fixed;
-  background-image: radial-gradient(
-    var(--body-dots-color) 2px,
-    var(--body-color) 2px
-  );
+
   background-size: 40px 40px;
   color: var(--text-color);
 }
@@ -1196,6 +1193,13 @@ img {
   .main,
   .footer__container {
     padding: 0;
+  }
+
+  body {
+    background-image: radial-gradient(
+      var(--body-dots-color) 2px,
+      var(--body-color) 2px
+    );
   }
 
   .home__blob {
