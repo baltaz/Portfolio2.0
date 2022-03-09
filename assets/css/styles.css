@@ -26,6 +26,7 @@
   --text-color-light: hsl(var(--hue-text-color), 8%, 65%);
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
+  --body-dots-color: #ededef;
   --container-color: #fff;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
@@ -86,6 +87,7 @@ body.dark-theme {
   --input-color: hsl(var(--hue-color), 29%, 16%);
   --body-color: hsl(var(--hue-color), 28%, 12%);
   --container-color: hsl(var(--hue-color), 29%, 16%);
+  --body-dots-color: var(--container-color);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
 }
@@ -113,6 +115,7 @@ body.dark-theme {
 html {
   scroll-behavior: smooth;
 }
+/*
 body {
   margin: 0 0 var(--header-height) 0;
   font-family: var(--body-font);
@@ -120,19 +123,20 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
 }
-/*
-  body {
-    margin: 0 0 var(--header-height) 0;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    background-color: var(--body-color);
-    opacity: 1;
-    background-image: radial-gradient(#ededef 2px, #f9f9fd 2px);
-    background-size: 40px 40px;
-    color: var(--text-color);
-  }
-  
 } */
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  opacity: 1;
+  background-image: radial-gradient(
+    var(--body-dots-color) 2px,
+    var(--body-color) 2px
+  );
+  background-size: 40px 40px;
+  color: var(--text-color);
+}
+
 h1,
 h2,
 h3,
@@ -202,6 +206,12 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.nav__logo {
+  fill: var(--title-color);
+}
+.nav__logo__img:hover {
+  fill: var(--first-color);
 }
 
 .nav__logo,
@@ -859,6 +869,9 @@ img {
   outline: none;
   padding: 0.25rem 0.5rem 0.5rem 0;
 }
+#message {
+  resize: none;
+}
 .contact__label {
   font-size: var(--smaller-font-size);
   color: var(--title-color);
@@ -866,7 +879,7 @@ img {
 
 /*==================== FOOTER ====================*/
 .footer {
-  padding-top: 2rem;
+  padding-top: 6rem;
 }
 .footer__container {
   row-gap: 3.5rem;
@@ -879,6 +892,10 @@ img {
 .footer__title {
   font-size: var(--h1-font-size);
   margin-bottom: var(--mb-0-25);
+}
+.footer__title__img {
+  margin-left: var(--mb-0-25);
+  fill: #fff;
 }
 .footer__subtitle {
   font-size: var(--small-font-size);
@@ -1162,7 +1179,7 @@ img {
   }
 
   .footer__container {
-    grid-template-columns: repeat(3 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .footer__bg {
     padding: 3rem 0 3.5rem;
