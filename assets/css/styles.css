@@ -121,7 +121,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   opacity: 1;
-  /*background-color: var(--body-color);*/
+  background-color: var(--body-color);
   background-attachment: fixed;
 
   background-size: 40px 40px;
